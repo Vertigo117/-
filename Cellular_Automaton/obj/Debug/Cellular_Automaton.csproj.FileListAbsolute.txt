@@ -1,0 +1,15 @@
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\Cellular_Automaton.csprojAssemblyReference.cache
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\MainWindow.g.cs
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\App.g.cs
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\Cellular_Automaton_MarkupCompile.cache
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\Cellular_Automaton_MarkupCompile.lref
+C:\C#\Клеточный автомат\Cellular_Automaton\bin\Debug\Cellular_Automaton.exe.config
+C:\C#\Клеточный автомат\Cellular_Automaton\bin\Debug\Cellular_Automaton.exe
+C:\C#\Клеточный автомат\Cellular_Automaton\bin\Debug\Cellular_Automaton.pdb
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\MainWindow.baml
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\Cellular_Automaton.g.resources
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\Cellular_Automaton.Properties.Resources.resources
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\Cellular_Automaton.csproj.GenerateResource.cache
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\Cellular_Automaton.csproj.CoreCompileInputs.cache
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\Cellular_Automaton.exe
+C:\C#\Клеточный автомат\Cellular_Automaton\obj\Debug\Cellular_Automaton.pdb

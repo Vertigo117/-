@@ -1,0 +1,25 @@
+﻿<Window x:Class="Cellular_Automaton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cellular_Automaton"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="600">
+    <Grid Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Name="bottomGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name="startButton" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">Start</Button>
+            <Button Name="clearButton" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0">Clear</Button>
+        </Grid>
+        <Grid Name="gameField"/>
+    </Grid>
+</Window>
