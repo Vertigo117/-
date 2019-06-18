@@ -28,9 +28,33 @@ namespace Cellular_Automaton
             cells = new Cell[height, width];
             CreateGameField(height, width);
             timer = new DispatcherTimer();
-            timer.Tick += (sender, e) => { Generate(); };
+            timer.Tick += new EventHandler(On_Timer_Tick);
             timer.Interval = TimeSpan.FromMilliseconds(500);
             started = false;
+        }
+
+        private void On_Timer_Tick(object sender, EventArgs e)
+        {
+            CheckGeneration();
+            ChangeState();
+        }
+
+        private void ChangeState()
+        {
+            foreach(Cell cell in cells)
+            {
+                if (cell.DeathStranding)
+                {
+                    cell.IsAlive = false;
+                    cell.DeathStranding = false;
+                }
+
+                if (cell.ComeAlive)
+                {
+                    cell.IsAlive = true;
+                    cell.ComeAlive = false;
+                }
+            }
         }
 
         private void CreateGameField(int h, int w)
@@ -63,6 +87,8 @@ namespace Cellular_Automaton
             foreach(Cell cell in cells)
             {
                 cell.IsAlive = false;
+                cell.DeathStranding = false;
+                cell.ComeAlive = false;
             }
         }
 
@@ -83,7 +109,7 @@ namespace Cellular_Automaton
             
         }
 
-        private void Generate()
+        private void CheckGeneration()
         {
             
 
@@ -95,7 +121,6 @@ namespace Cellular_Automaton
                 if (CheckNeighbor(cell.X - 0, cell.Y - 1)) counter++;
                 if (CheckNeighbor(cell.X + 1, cell.Y - 1)) counter++;
                 if (CheckNeighbor(cell.X - 1, cell.Y - 0)) counter++;
-                if (CheckNeighbor(cell.X - 0, cell.Y - 0)) counter++;
                 if (CheckNeighbor(cell.X + 1, cell.Y - 0)) counter++;
                 if (CheckNeighbor(cell.X - 1, cell.Y + 1)) counter++;
                 if (CheckNeighbor(cell.X - 0, cell.Y + 1)) counter++;
@@ -103,13 +128,13 @@ namespace Cellular_Automaton
 
                 if(cell.IsAlive)
                 {
-                    if (counter < 2) cell.IsAlive = false;
-                    if (counter > 3) cell.IsAlive = false;
-                    if (counter == 2 || counter == 3) cell.IsAlive = true;
+                    if (counter < 2) cell.DeathStranding = true;
+                    if (counter > 3) cell.DeathStranding = true;
+                    if (counter == 2 || counter == 3) cell.DeathStranding = false;
                 }
                 if(!cell.IsAlive)
                 {
-                    if (counter == 3) cell.IsAlive = true;
+                    if (counter == 3) cell.ComeAlive = true;
                 }
                 
             }
@@ -119,9 +144,9 @@ namespace Cellular_Automaton
 
         private bool CheckNeighbor(int x, int y)
         {
-            if(x>=0 && x<width)
+            if(x>=0 && x<height)
             {
-                if(y>=0 && y<height)
+                if(y>=0 && y<width)
                 {
                     return cells[x, y].IsAlive;
                 }

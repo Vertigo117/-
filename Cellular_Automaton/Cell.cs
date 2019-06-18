@@ -34,6 +34,9 @@ namespace Cellular_Automaton
                 }
             }
         }
+
+        public bool DeathStranding { get; set; }
+        public bool ComeAlive { get; set; }
         
 
         public Cell(int x,int y)
