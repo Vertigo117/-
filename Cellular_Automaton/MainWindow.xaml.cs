@@ -21,6 +21,7 @@ namespace Cellular_Automaton
     public partial class MainWindow : Window
     {
         private Game game;
+        private int g;
 
         public MainWindow()
         {
@@ -28,11 +29,23 @@ namespace Cellular_Automaton
             game = new Game(40, 40, gameField);
             startButton.Click += new RoutedEventHandler(Start_Button_Click);
             clearButton.Click += new RoutedEventHandler(Clear_Button_Click);
+            game.GenerationsCount += new EventHandler(On_GenerationsCount);
+            g = 0;
+        }
+
+       
+
+        private void On_GenerationsCount(object sender, EventArgs e)
+        {
+            numberOfGenerationsText.Text = g.ToString();
+            g++.ToString();
         }
 
         private void Clear_Button_Click(object sender, RoutedEventArgs e)
         {
             game.Clear();
+            g = 0;
+            numberOfGenerationsText.Text = g.ToString();
         }
 
         private void Start_Button_Click(object sender, RoutedEventArgs e)

@@ -19,6 +19,7 @@ namespace Cellular_Automaton
         private int height;
         private int width;
         private bool started;
+        public event EventHandler GenerationsCount;
 
         public Game(int height, int width, Grid gameGrid)
         {
@@ -37,6 +38,7 @@ namespace Cellular_Automaton
         {
             CheckGeneration();
             ChangeState();
+            GenerationsCount?.Invoke(this, new EventArgs());
         }
 
         private void ChangeState()
@@ -67,6 +69,7 @@ namespace Cellular_Automaton
                 for(int j=0;j<w;j++)
                 {
                     Cell cell = new Cell(i, j);
+                    //cell.IsMouseDirectlyOverChanged += new DependencyPropertyChangedEventHandler(Cell_Click);
                     cell.Click += new RoutedEventHandler(Cell_Click);
                     Grid.SetColumn(cell, i);
                     Grid.SetRow(cell, j);
@@ -79,7 +82,11 @@ namespace Cellular_Automaton
         private void Cell_Click(object sender, RoutedEventArgs e)
         {
             Cell cell = (Cell)sender;
-            cell.IsAlive = true;
+
+            
+                cell.IsAlive = true;
+            
+            
         }
 
         public void Clear()

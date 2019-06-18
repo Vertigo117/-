@@ -26,11 +26,11 @@ namespace Cellular_Automaton
                 isAlive = value;
                 if(isAlive==true)
                 {
-                    Background = Brushes.Black;
+                    Background = Brushes.Gold;
                 }
                 else
                 {
-                    Background = Brushes.Transparent;
+                    Background = Brushes.DarkGray;
                 }
             }
         }
@@ -44,7 +44,7 @@ namespace Cellular_Automaton
             X = x;
             Y = y;
 
-            Background = Brushes.Transparent;
+            Background = Brushes.DarkGray;
         }
     }
 }

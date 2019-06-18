@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cellular_Automaton"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="600">
-    <Grid Name="mainGrid">
+        Title="MainWindow" Height="600" Width="600" Background="DimGray" Name="mainForm">
+    <Grid Name="mainGrid" Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
             <RowDefinition Height="*"/>
@@ -17,8 +17,9 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Name="startButton" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">Start</Button>
-            <Button Name="clearButton" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0">Clear</Button>
+            <Button Width="50" Name="startButton" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0">Start</Button>
+            <Button Width="50" Name="clearButton" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0">Clear</Button>
+            <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Name="numberOfGenerationsText" Grid.Column="2">0</TextBlock>
         </Grid>
         <Grid Name="gameField"/>
     </Grid>
